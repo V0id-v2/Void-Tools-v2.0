@@ -1,0 +1,12 @@
+colorama>=0.4.6
+rich>=13.0.0
+requests>=2.28.0
+dnspython>=2.3.0
+urllib3>=2.0.0
+beautifulsoup4>=4.12.0
+phonenumbers>=8.13.0
+pyzipper>=0.3.6
+pynput>=1.7.6
+discord.py>=2.3.0
+aiohttp>=3.9.0
+Pillow>=10.0.0

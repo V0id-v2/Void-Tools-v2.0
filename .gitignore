@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Runtime / local config
+Void/data/.launched
+Void/data/remote-cache.json
+Void/data/webhook-*.json
+Void/data/webhook-response.txt
+Void/data/database/
+Void/config/settings.json
+Void/config/discord-nuker.json
+Void/tools/void-nuke/.void_first
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

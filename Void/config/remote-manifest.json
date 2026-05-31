@@ -1,0 +1,18 @@
+{
+  "config_rev": "1",
+  "latest_version": "2.0.0",
+  "download_url": "https://github.com/V0id-v2/Void-Tools-v2.0/releases",
+  "zip_url": "https://github.com/V0id-v2/Void-Tools-v2.0/archive/refs/heads/main.zip",
+  "announcement": {
+    "title_fr": "VOID-TOOLS v2.0 — OUT NOW!",
+    "title_en": "VOID-TOOLS v2.0 — OUT NOW!",
+    "body_fr": "v2 is out!\n150+ tools · 13 themes · remote sync · auto-update.\n⭐ Star the GitHub repo to support the project.",
+    "body_en": "v2 is out!\n150+ tools · 13 themes · remote sync · auto-update.\n⭐ Star the GitHub repo to support the project."
+  },
+  "links": {
+    "discord": "https://discord.gg/v0id",
+    "github": "https://github.com/V0id-v2/Void-Tools-v2.0",
+    "shop": "https://void-tools.mysellauth.com/"
+  },
+  "changelog": "VOID-TOOLS v2.0.0\n- Modular dashboard · 150+ tools\n- Remote sync · auto-update · premium shop + Discord"
+}
