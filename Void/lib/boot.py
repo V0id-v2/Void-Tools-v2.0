@@ -187,10 +187,16 @@ def first_run():
         if not os.path.exists(gif):
             gif = os.path.join(_VOID_DIR, "screenshots", "Star.gif")
         if os.path.exists(gif):
-            if os.name == "nt":
-                os.startfile(gif)
-            else:
-                webbrowser.open(gif)
+            try:
+                if os.name == "nt":
+                    os.startfile(gif)
+                else:
+                    webbrowser.open(gif)
+            except Exception:
+                try:
+                    webbrowser.open(gif)
+                except Exception:
+                    pass
         with open(flag, "w", encoding="utf-8") as f:
             f.write("1")
 

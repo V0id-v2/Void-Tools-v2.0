@@ -262,7 +262,14 @@ def main():
     ))
     
     if console.input(f"\n  [bold {C_RED}]>[/] [dim]Ouvrir le dossier ? (o/n) >> [/]").lower() == 'o':
-        os.startfile(out_dir)
+        try:
+            os.startfile(out_dir)
+        except Exception:
+            try:
+                import webbrowser
+                webbrowser.open(out_dir)
+            except Exception:
+                pass
 
 if __name__ == "__main__":
     try: main()
