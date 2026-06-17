@@ -6,7 +6,7 @@ REMOTE_MANIFEST_URL = (
     "https://raw.githubusercontent.com/V0id-v2/Void-Tools-v2.0/main/Void/config/remote-manifest.json"
 )
 
-VERSION = "2.4.0"
+VERSION = "2.5.0"
 GITHUB = "https://github.com/V0id-v2/Void-Tools-v2.0"
 STAR_GIF_URL = (
     "https://raw.githubusercontent.com/V0id-v2/Void-Tools-v2.0/main/Void/screenshots/star.PNG"
@@ -14,9 +14,8 @@ STAR_GIF_URL = (
 NUKER_GITHUB = "https://github.com/void4real/Void-Nuke"
 TELEGRAM = "https://t.me/v0idtool"
 TELEGRAM_TAG = "t.me/v0idtool"
-# Alias — anciennes refs C.DISCORD pointent vers Telegram
-DISCORD = TELEGRAM
-DISCORD_TAG = TELEGRAM_TAG
+DISCORD = "https://discord.gg/voidv2"
+DISCORD_TAG = "discord.gg/voidv2"
 SHOP = "https://void-tools.mysellauth.com/"
 AUTHOR = "1s0e"
 
@@ -28,12 +27,12 @@ SETTINGS_PATH = os.path.join(CONFIG_DIR, "settings.json")
 NUKER_CFG_PATH = os.path.join(CONFIG_DIR, "discord-nuker.json")
 CUSTOM_TOOLS_DIR = os.path.join(VOID_DIR, "tools", "custom")
 
-CHANGELOG = """VOID-TOOLS v2.4.0
-- Communauté sur Telegram : t.me/v0idtool (Discord en pause)
-- Écran de join au lancement · ouverture auto du Telegram
-- HOME · webhooks · branding · manifest migrés vers Telegram
+CHANGELOG = """VOID-TOOLS v2.5.0
+- Discord réouvert : discord.gg/voidv2 + Telegram t.me/v0idtool
+- Au lancement : ouverture auto Telegram ET Discord
+- HOME · manifest · branding · webhooks mis à jour
 
-VOID-TOOLS v2.3.0
+VOID-TOOLS v2.4.0
 - Migration communauté · écran join obligatoire au boot
 - Branding centralisé via lib/constants
 

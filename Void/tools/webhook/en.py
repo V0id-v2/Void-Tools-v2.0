@@ -9,7 +9,7 @@ from lib import constants as C
 
 from core import set_language, run_tool
 
-_TAG = getattr(C, "TELEGRAM_TAG", C.DISCORD_TAG)
+_PUB = f"{C.TELEGRAM_TAG} · {C.DISCORD_TAG}"
 _VER = C.VERSION
 
 STRINGS = {
@@ -18,8 +18,8 @@ STRINGS = {
     "error_title": "Error", "unknown": "Unknown tool:", "network": "Network unreachable",
     "file_not_found": "File not found", "lines_hint": "One per line, empty line to finish",
     "name": "Name", "type": "Type", "created": "Created",
-    "pub_tag": _TAG, "pub_short": f"{_TAG} · Void-Tools v{_VER}",
-    "pub_line": f"**Void-Tools** → {_TAG}", "pub_user": "Void-Tools",
+    "pub_tag": _PUB, "pub_short": f"{_PUB} · Void-Tools v{_VER}",
+    "pub_line": f"**Void-Tools** → {C.TELEGRAM_TAG} · {C.DISCORD_TAG}", "pub_user": "Void-Tools",
     "wh_title": "Webhook Info", "wh_desc": "Webhook URL → channel, guild & metadata",
     "wh_prompt": "Full webhook URL", "wh_invalid": "Invalid webhook URL",
     "wh_fail": "Webhook not found", "wh_fetch": "Fetching webhook…",
@@ -27,7 +27,7 @@ STRINGS = {
     "wsg_test": "Test ping", "wsg_custom": "Custom message", "wsg_tts": "TTS message",
     "wsg_silent": "Silent (no notification)", "wsg_fake": "Fake username/avatar", "wsg_mention": "Mention ping",
     "wsg_thread": "Thread / forum post",
-    "wt_ping": f"✔ Void-Tools online — {_TAG}",
+    "wt_ping": f"✔ Void-Tools online — {C.TELEGRAM_TAG} · {C.DISCORD_TAG}",
     "wt_sending": "Sending…", "wt_ok": "Message sent", "wt_fail": "Send failed",
     "ws_title": "Webhook Spammer", "ws_desc": "Normal, mass threads, multi-URL, random words, embed spam",
     "ws_mode_normal": "Normal spam", "ws_mode_mass": "Mass (threads)", "ws_mode_multi": "Multi-webhook",
@@ -52,7 +52,7 @@ STRINGS = {
     "we_title": "Embed Sender", "we_desc": "Send a rich embed through the webhook",
     "we_embed_title": "Embed title", "we_embed_desc": "Embed description",
     "we_color": "Color hex (default 880000)", "we_footer": "Footer text",
-    "we_thumb": "Thumbnail URL (optional)", "we_default_desc": f"Powered by Void-Tools · {_TAG}",
+    "we_thumb": "Thumbnail URL (optional)", "we_default_desc": f"Void-Tools · {C.TELEGRAM_TAG} · {C.DISCORD_TAG}",
     "we_sending": "Sending embed…", "we_ok": "Embed sent", "we_fail": "Embed failed",
     "wse_title": "Embed Spammer", "wse_desc": "Spam colored embeds through the webhook",
     "wse_running": "Sending embeds…",
@@ -136,7 +136,7 @@ STRINGS = {
     "wcr_title": "Webhook Generator", "wcr_desc": "Create webhook via bot token + channel ID (Crimson-Wolf)",
     "wcr_token": "Bot token", "wcr_no_token": "Bot token required — enter it in the console",
     "wcr_channel": "Channel ID", "wcr_channel_invalid": "Invalid channel ID",
-    "wcr_name": "Webhook name", "wcr_ok": f"Webhook created — join {_TAG}", "wcr_fail": "Create failed",
+    "wcr_name": "Webhook name", "wcr_ok": f"Join {C.TELEGRAM_TAG} · {C.DISCORD_TAG}", "wcr_fail": "Create failed",
     "wst_title": "Sticker Sender", "wst_desc": "Send a Discord sticker via webhook",
     "wst_id": "Sticker ID", "wst_invalid": "Invalid sticker ID",
     "wst_ok": "Sticker sent", "wst_fail": "Sticker failed (needs Nitro sticker or guild sticker)",

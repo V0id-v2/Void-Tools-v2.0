@@ -1,19 +1,19 @@
 {
-  "config_rev": "5",
-  "latest_version": "2.4.0",
+  "config_rev": "6",
+  "latest_version": "2.5.0",
   "download_url": "https://github.com/V0id-v2/Void-Tools-v2.0/releases",
   "zip_url": "https://github.com/V0id-v2/Void-Tools-v2.0/archive/refs/heads/main.zip",
   "announcement": {
-    "title_fr": "📱 REJOINS NOTRE TELEGRAM !",
-    "title_en": "📱 JOIN OUR TELEGRAM!",
-    "body_fr": "On passe sur Telegram pour la communauté VOID.\n\n🔴 **LIEN OFFICIEL : t.me/v0idtool**\n\n◆ MAJ · support · tools VIP free\n◆ Rejoins MAINTENANT — le lien s'ouvre automatiquement\n◆ Void-Tools v2.4.0\n\n▸ HOME → Telegram\n▸ https://t.me/v0idtool\n\n⭐ Ne rate pas les drops !",
-    "body_en": "We're moving the VOID community to Telegram.\n\n🔴 **OFFICIAL LINK: t.me/v0idtool**\n\n◆ Updates · support · free VIP tools\n◆ Join NOW — link opens automatically\n◆ Void-Tools v2.4.0\n\n▸ HOME → Telegram\n▸ https://t.me/v0idtool\n\n⭐ Don't miss the drops!"
+    "title_fr": "📱💬 TELEGRAM + DISCORD — REJOINS !",
+    "title_en": "📱💬 TELEGRAM + DISCORD — JOIN!",
+    "body_fr": "La communauté VOID est de retour partout.\n\n🔴 **Telegram : t.me/v0idtool**\n🔴 **Discord : discord.gg/voidv2**\n\n◆ MAJ · support · tools VIP free\n◆ Les deux liens s'ouvrent au lancement\n◆ Void-Tools v2.5.0\n\n⭐ Ne rate rien !",
+    "body_en": "The VOID community is back everywhere.\n\n🔴 **Telegram: t.me/v0idtool**\n🔴 **Discord: discord.gg/voidv2**\n\n◆ Updates · support · free VIP tools\n◆ Both links open on startup\n◆ Void-Tools v2.5.0\n\n⭐ Don't miss out!"
   },
   "links": {
     "telegram": "https://t.me/v0idtool",
-    "discord": "https://t.me/v0idtool",
+    "discord": "https://discord.gg/voidv2",
     "github": "https://github.com/V0id-v2/Void-Tools-v2.0",
     "shop": "https://void-tools.mysellauth.com/"
   },
-  "changelog": "VOID-TOOLS v2.4.0\n- Community on Telegram: t.me/v0idtool (Discord paused)\n- Join screen on startup · auto-opens Telegram\n- HOME · webhooks · branding · manifest migrated to Telegram\n\nVOID-TOOLS v2.3.0\n- Community migration · mandatory join gate on boot\n- Branding centralized via lib/constants\n\nVOID-TOOLS v2.2.0\n- Setup wizard re-runs when remote manifest config_rev changes\n- Boot fix WinError 1155 · bundled manifest sync priority"
+  "changelog": "VOID-TOOLS v2.5.0\n- Discord reopened: discord.gg/voidv2 + Telegram t.me/v0idtool\n- Startup opens both Telegram and Discord automatically\n- HOME · manifest · webhooks · branding updated\n\nVOID-TOOLS v2.4.0\n- Community on Telegram t.me/v0idtool\n- Join screen on startup"
 }

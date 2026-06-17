@@ -29,7 +29,9 @@ def verifier_webhook(url):
                 
 > __**Votre webhook fonctionne, vous pouvez commencer à générer des Nitro !**__
 
-> {getattr(C, 'TELEGRAM', C.DISCORD)}
+> {C.TELEGRAM}
+
+> {C.DISCORD}
 
 > https://github.com/V0id-v2/Void-Tools-v2.0
 

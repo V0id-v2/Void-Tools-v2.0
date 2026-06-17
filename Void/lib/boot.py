@@ -182,7 +182,8 @@ def first_run():
     if not os.path.exists(flag):
         webbrowser.open(C.GITHUB)
         webbrowser.open(C.SHOP)
-        webbrowser.open(C.DISCORD)
+        from .void_common import open_community_links
+        open_community_links()
         gif = os.path.join(_VOID_DIR, "screenshots", "star.PNG")
         if not os.path.exists(gif):
             gif = os.path.join(_VOID_DIR, "screenshots", "Star.gif")

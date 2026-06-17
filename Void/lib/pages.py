@@ -162,13 +162,14 @@ def build_pages_data(plugin_items=None):
     pages = {
         "home": [
             ("01", "GitHub", lambda: webbrowser.open(C.GITHUB)),
-            ("02", "Telegram", lambda: webbrowser.open(getattr(C, "TELEGRAM", C.DISCORD))),
-            ("03", "Star GitHub", lambda: webbrowser.open(C.GITHUB)),
-            ("04", "Premium Shop", T.tool_premium_shop),
-            ("05", "Changelog", T.tool_changelog),
-            ("06", "Credits", T.tool_credits),
-            ("07", "Setup Config", lambda: __import__("lib.setup", fromlist=["x"]).run_setup_wizard(force=True)),
-            ("08", "Liens / MAJ", tool_remote_sync),
+            ("02", "Telegram", lambda: webbrowser.open(C.TELEGRAM)),
+            ("03", "Discord", lambda: webbrowser.open(C.DISCORD)),
+            ("04", "Star GitHub", lambda: webbrowser.open(C.GITHUB)),
+            ("05", "Premium Shop", T.tool_premium_shop),
+            ("06", "Changelog", T.tool_changelog),
+            ("07", "Credits", T.tool_credits),
+            ("08", "Setup Config", lambda: __import__("lib.setup", fromlist=["x"]).run_setup_wizard(force=True)),
+            ("09", "Liens / MAJ", tool_remote_sync),
             ("Q", "Quit System", lambda: sys.exit(0)),
         ],
         "osint": [

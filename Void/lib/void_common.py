@@ -18,11 +18,23 @@ from .config import get_settings
 console = Console(highlight=False)
 
 
+def open_community_links():
+    """Ouvre Telegram + Discord (liens remote sync)."""
+    import webbrowser
+    for url in (getattr(C, "TELEGRAM", ""), getattr(C, "DISCORD", "")):
+        if not url:
+            continue
+        try:
+            webbrowser.open(url)
+        except Exception:
+            pass
+
+
 def open_premium_links():
-    """Ouvre shop + Discord (liens remote sync)."""
+    """Ouvre shop + Telegram + Discord."""
     import webbrowser
     webbrowser.open(C.SHOP)
-    webbrowser.open(C.DISCORD)
+    open_community_links()
 
 
 def star_image_path():
@@ -50,7 +62,7 @@ def open_star_unlock():
             "Star the GitHub repo to support Void-Tools and unlock premium.",
         )
     try:
-        webbrowser.open(C.DISCORD)
+        open_community_links()
         time.sleep(0.4)
         webbrowser.open(C.GITHUB)
         time.sleep(0.4)

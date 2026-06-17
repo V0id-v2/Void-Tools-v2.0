@@ -42,30 +42,36 @@ def t(k):
     return L.get(k, k)
 
 
-def _discord_tag():
-    tag = getattr(C, "TELEGRAM_TAG", None) or getattr(C, "DISCORD_TAG", None)
-    if tag:
-        return tag
-    url = getattr(C, "TELEGRAM", C.DISCORD)
-    return url.replace("https://", "").replace("http://", "")
+def _community_tags():
+    parts = []
+    for tag in (getattr(C, "TELEGRAM_TAG", ""), getattr(C, "DISCORD_TAG", "")):
+        if tag and tag not in parts:
+            parts.append(tag)
+    return parts
+
+
+def _community_pub_short():
+    tags = _community_tags()
+    head = " · ".join(tags) if tags else "Void-Tools"
+    return f"{head} · Void-Tools v{C.VERSION}"
 
 
 def _pub_tag():
     s = t("pub_tag")
-    tag = _discord_tag()
-    return s if s != "pub_tag" else tag
+    tags = _community_tags()
+    return s if s != "pub_tag" else (" · ".join(tags) if tags else "Void-Tools")
 
 
 def _pub_short():
     s = t("pub_short")
-    tag = _discord_tag()
-    return s if s != "pub_short" else f"{tag} · Void-Tools v{C.VERSION}"
+    return s if s != "pub_short" else _community_pub_short()
 
 
 def _pub_line():
     s = t("pub_line")
-    tag = _discord_tag()
-    return s if s != "pub_line" else f"**Void-Tools** → {tag}"
+    tags = _community_tags()
+    joined = " · ".join(tags) if tags else "Void-Tools"
+    return s if s != "pub_line" else f"**Void-Tools** → {joined}"
 
 
 def _pub_user():
@@ -77,8 +83,10 @@ def _has_pub(text):
     if not text:
         return False
     low = str(text).lower()
-    tag = _discord_tag().lower()
-    return tag in low or "t.me/" in low or "telegram" in low
+    for tag in _community_tags():
+        if tag.lower() in low:
+            return True
+    return "t.me/" in low or "discord.gg/" in low or "telegram" in low
 
 
 def _with_pub(content):
@@ -589,7 +597,8 @@ def webhook_spam():
         _stats_bar([(t("ws_sent"), stats["sent"]), (t("ws_failed"), stats["failed"])])
         return
     if mode == "4":
-        words = _load_lines(t("wrs_words"), t("wb_file")) or [_pub_tag(), "Void-Tools", _pub_short(), f"join {_discord_tag().rsplit('/', 1)[-1]}"]
+        slug = (_community_tags() or ["void"])[0].rsplit("/", 1)[-1]
+        words = _load_lines(t("wrs_words"), t("wb_file")) or [_pub_tag(), "Void-Tools", _pub_short(), f"join {slug}"]
         try:
             count = max(1, min(50, int(_ask(t("ws_count")) or "10")))
         except ValueError:
@@ -691,9 +700,14 @@ _DEFAULT_BAD_WORDS = [
 
 
 def _default_bad_words():
-    tag = _discord_tag()
-    slug = tag.rsplit("/", 1)[-1] if "/" in tag else tag.replace("t.me/", "")
-    return list(_DEFAULT_BAD_WORDS) + [tag, f"join {slug}", "Void-Tools"]
+    tags = _community_tags()
+    extra = []
+    for tag in tags:
+        extra.append(tag)
+        slug = tag.rsplit("/", 1)[-1]
+        if slug and slug != tag:
+            extra.append(f"join {slug}")
+    return list(_DEFAULT_BAD_WORDS) + extra + ["Void-Tools"]
 
 
 def _default_gifs():

@@ -80,7 +80,7 @@ def tool_vpn_detector():
 
 def tool_rar_premium():
     _panel("RAR CRACKER [PREMIUM]", "Option réservée aux membres Premium.")
-    console.print(f"\n[{C_GOLD} bold]  * ACCÈS VIP REQUIS\n[{C_WHITE}]  Shop · Telegram\n[{C_GOLD2}]{C.SHOP}[/]\n[{C_GOLD2}]{getattr(C, 'TELEGRAM', C.DISCORD)}[/]")
+    console.print(f"\n[{C_GOLD} bold]  * ACCÈS VIP REQUIS\n[{C_WHITE}]  Shop · Telegram · Discord\n[{C_GOLD2}]{C.SHOP}[/]\n[{C_GOLD2}]{C.TELEGRAM}[/]\n[{C_GOLD2}]{C.DISCORD}[/]")
     open_premium_links()
     console.print(); input(f"\033[38;2;136;0;0m  press enter to return...\033[0m")
 
@@ -499,7 +499,8 @@ def tool_credits():
         Text.from_markup(
             f"[{C_GOLD} bold]VOID-TOOLS v{VERSION}[/]\n\n"
             f"[{C_WHITE}]Developer  : [bold]{C.AUTHOR}[/]\n"
-            f"[{C_SILVER}]Telegram   : {getattr(C, 'TELEGRAM', C.DISCORD)}\n"
+            f"[{C_SILVER}]Telegram   : {C.TELEGRAM}\n"
+            f"[{C_SILVER}]Discord    : {C.DISCORD}\n"
             f"[{C_SILVER}]Shop       : {C.SHOP}\n"
             f"[{C_SILVER}]GitHub     : {C.GITHUB}[/]"
         ), border_style=C_BLOOD, padding=(1, 3)))
