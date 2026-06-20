@@ -9,7 +9,7 @@ from rich.text import Text
 from rich import box
 
 from . import constants as C
-from .void_common import ansi_hex, console, error_box, fmt_label, is_premium, pause
+from .void_common import ansi_hex, console, error_box, fmt_label, is_premium, pause, localize_item_label
 from .i18n import t
 
 
@@ -52,6 +52,7 @@ def search_tools(categories, pages_data, raw_query: str, limit=40):
         if cat_f and cat_f not in cat_key.lower() and cat_f not in cat_label.lower():
             continue
         for code, label, action in pages_data.get(cat_key, []):
+            label = localize_item_label(label, action)
             prem = is_premium(label)
             if tier_f == "free" and prem:
                 continue

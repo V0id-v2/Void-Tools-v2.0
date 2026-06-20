@@ -89,21 +89,28 @@ def star_image_path():
     return os.path.join(shots, "star.PNG")
 
 
+def star_unlock_label() -> str:
+    return t("Star pour débloquer [STAR]", "Star for unlock [STAR]")
+
+
+def localize_item_label(label: str, action) -> str:
+    """Traduit les libellés figés au build (ex. star unlock slots)."""
+    if action is open_star_unlock:
+        return star_unlock_label()
+    return label
+
+
 def open_star_unlock():
     """Star funnel — Discord, GitHub repo, star screenshot."""
     import webbrowser
 
-    s = get_settings()
-    if s.lang == "fr":
-        panel(
-            "STAR POUR DÉBLOQUER",
+    panel(
+        t("STAR POUR DÉBLOQUER", "STAR FOR UNLOCK"),
+        t(
             "Star le repo GitHub pour soutenir Void-Tools et débloquer le premium.",
-        )
-    else:
-        panel(
-            "STAR FOR UNLOCK",
             "Star the GitHub repo to support Void-Tools and unlock premium.",
-        )
+        ),
+    )
     try:
         open_community_links()
         time.sleep(0.4)
@@ -124,7 +131,7 @@ def append_star_unlock_items(items):
     """Ajoute 4 slots Star for unlock en bas de catégorie."""
     if not items:
         return items
-    label = t("Star pour débloquer [STAR]", "Star for unlock [STAR]")
+    label = star_unlock_label()
     base = len(items)
     extra = []
     for i in range(4):

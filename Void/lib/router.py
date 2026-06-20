@@ -18,7 +18,7 @@ from .pages import build_pages_data
 from .plugins import discover_plugins
 from .search import run_search_ui
 from .ui import make_card_cell, make_online_text, make_title_text, monitor_block
-from .void_common import cls, is_arrow, poll_console_key, safe_action, sort_free_first, append_star_unlock_items
+from .void_common import cls, is_arrow, poll_console_key, safe_action, sort_free_first, append_star_unlock_items, localize_item_label
 from .i18n import t
 
 STAR_CATEGORIES = {
@@ -78,7 +78,10 @@ class MasterRouter:
         return self.categories[self.cat_idx][0]
 
     def _tools(self):
-        return self.pages_data.get(self._cat_key(), [])
+        return [
+            (code, localize_item_label(label, action), action)
+            for code, label, action in self.pages_data.get(self._cat_key(), [])
+        ]
 
     def _nuker_state(self):
         now = time.time()
